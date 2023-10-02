@@ -32,8 +32,8 @@ void	PhoneBook::Add()
 	std::getline(std::cin, answer);
 	if (std::cin.eof())
 		return (0);
-	while (answer == '/0')
-		std::getline(std::cin, answer);
+	while (answer == '/0' && !(answer.find_first_not_of(" 0123456789");)
+		std::getline(std::cin, answer); //si erreur enlever partie find_first
 	N[_index].setPhone_Nb(answer);
 	std::cout << "What's the first name ?\n";
 	std::getline(std::cin, answer);
