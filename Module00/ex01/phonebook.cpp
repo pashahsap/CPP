@@ -32,26 +32,35 @@ void	PhoneBook::Add()
 	std::getline(std::cin, answer);
 	if (std::cin.eof())
 		return (0);
+	while (answer == '/0')
+		std::getline(std::cin, answer);
 	N[_index].setPhone_Nb(answer);
 	std::cout << "What's the first name ?\n";
 	std::getline(std::cin, answer);
 	if (std::cin.eof())
 		return (0);
+	while (answer == '/0')
+		std::getline(std::cin, answer);
 	N[_index].setF_Name(answer);
 	std::cout << "What's the last name ?\n";
 	std::getline(std::cin, answer);
 	if (std::cin.eof())
 		return (0);
+	while (answer == '/0')
+		std::getline(std::cin, answer);
 	N[_index].setL_Name(answer);
 	std::cout << "What's the nickname ?\n";
 	std::getline(std::cin, answer);
 	if (std::cin.eof())
 		return (0);
+	while (answer == '/0')
 	N[_index].setNickname(answer);
 	std::cout << "What's the darkest secret ?\n";
 	std::getline(std::cin, answer);
 	if (std::cin.eof())
 		return (0);
+	while (answer == '/0')
+		std::getline(std::cin, answer);
 	N[_index].setSecret(answer);
 	_index = _index + 1;
 }
