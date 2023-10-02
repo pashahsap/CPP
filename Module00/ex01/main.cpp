@@ -12,7 +12,7 @@
 
 #include "phonebook.hpp"
 
-int	main(int argc, char **argv)
+int	main()
 {
 	if (argc != 1)
 	{
