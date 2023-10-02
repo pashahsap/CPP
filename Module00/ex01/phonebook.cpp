@@ -30,18 +30,28 @@ void	PhoneBook::Add()
 	std::cout << "What's the phone's number ?\n";
 	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 	std::getline(std::cin, answer);
+	if (std::cin.eof())
+		return (0);
 	N[_index].setPhone_Nb(answer);
 	std::cout << "What's the first name ?\n";
 	std::getline(std::cin, answer);
+	if (std::cin.eof())
+		return (0);
 	N[_index].setF_Name(answer);
 	std::cout << "What's the last name ?\n";
 	std::getline(std::cin, answer);
+	if (std::cin.eof())
+		return (0);
 	N[_index].setL_Name(answer);
 	std::cout << "What's the nickname ?\n";
 	std::getline(std::cin, answer);
+	if (std::cin.eof())
+		return (0);
 	N[_index].setNickname(answer);
 	std::cout << "What's the darkest secret ?\n";
 	std::getline(std::cin, answer);
+	if (std::cin.eof())
+		return (0);
 	N[_index].setSecret(answer);
 	_index = _index + 1;
 }
@@ -118,6 +128,8 @@ void	PhoneBook::Search()
 			std::cout << "Please insert the index of the contact you are looking for :\n";
 			std::string	input;
 			std::getline(std::cin, input);
+			if (std::cin.eof())
+				return (0);
 			int	number = check_index(input);
 			if (_index < 8 && _size == 0)
 			{
