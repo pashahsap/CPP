@@ -33,7 +33,8 @@ int	main(int argc, char **argv)
 	while (1)
 	{
 		std::cout << "Please print your command :\n";
-		std::cin >> choice;
+		std::cin.ignore();
+		std::getline(std::cin, choice);
 		if (choice == "add" || choice == "Add" || choice == "ADD")
 			phonebook.Add();
 		else if (choice == "search" || choice == "Search" || choice == "SEARCH")
@@ -45,6 +46,8 @@ int	main(int argc, char **argv)
 			std::cout << "THANK YOU FOR USING IT. SEE YOU SOON.\n";
 			exit(0);
 		}
+		else if (std::cin.eof())
+			return (0);
 		else
 			std::cout << "Bad arguments.\n";
 	}
