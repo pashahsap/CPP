@@ -44,7 +44,7 @@ int	main()
 		else if (choice == "exit" || choice == "Exit" || choice == "EXIT")
 		{
 			std::cout << "THANK YOU FOR USING IT. SEE YOU SOON.\n";
-			exit(0);
+			return (0);
 		}
 		else if (std::cin.eof())
 			return (0);
