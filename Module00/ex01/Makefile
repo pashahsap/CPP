@@ -1,26 +1,30 @@
-SRC			=	main.cpp \
-				contact.cpp \
-				phonebook.cpp \
+NAME 			=	PhoneBook
+CC				=	g++
+FLAGS			=	-Wall -Wextra -Werror -std=c++98
+RM				=	rm -f
+CHECK			=	-fsanitize=address
 
-NAME		=	phonebook
+SRCS	=	PhoneBook.cpp Contact.cpp main.cpp
 
-OBJS_SRC	=	$(SRC:.cpp=.o)
+OBJS	=	$(SRCS:.cpp=.o)
 
-OBJS		=	$(OBJS_SRC)
 
-FLAGS		=	-Werror -Wextra -Wall -std=c++98
+.o : .c $(HEADER) Makefile
+		@$(CC) $(FLAGS) -c $< -o $(<:cpp=o) $@
 
-all		:	$(NAME)
+$(NAME): $(OBJS)
+		$(CC) $(OBJS) $(FLAGS) -o $(NAME) $(CHECK)
 
-$(NAME)	:	$(OBJS)
-				g++ $(OBJS_SRC) $(FLAGS) -o $(NAME)
+.SILENT : $(OBJS) $(NAME)
 
-clean	:
-			@rm -rf $(OBJS_SRC)
+all     :   $(NAME)
 
-fclean	:	clean
-			@rm -rf $(NAME)
+clean   :
+			@$(RM) $(OBJS)
 
-re		:	fclean all
+fclean  :	clean
+			@$(RM) $(NAME)
 
-.PHONY	:	all clean fclean re
+re      :   fclean all
+
+.PHONY  :   all clean fclean re
