@@ -1,12 +1,12 @@
-NAME 			=	PhoneBook
-CC				=	g++
-FLAGS			=	-Wall -Wextra -Werror -std=c++98
-RM				=	rm -f
-CHECK			=	-fsanitize=address
+NAME 		=	PhoneBook
+CC		=	g++
+FLAGS		=	-Wall -Wextra -Werror -std=c++98
+RM		=	rm -f
+CHECK		=	-fsanitize=address
 
-SRCS	=	PhoneBook.cpp Contact.cpp main.cpp
+SRCS		=	phonebook.cpp contact.cpp main.cpp
 
-OBJS	=	$(SRCS:.cpp=.o)
+OBJS		=	$(SRCS:.cpp=.o)
 
 
 .o : .c $(HEADER) Makefile
