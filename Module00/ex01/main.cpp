@@ -12,7 +12,7 @@
 
 #include "phonebook.hpp"
 
-int	main()
+int	main(int argc, char **argv)
 {
 	if (argc != 1)
 	{
@@ -33,7 +33,6 @@ int	main()
 	while (1)
 	{
 		std::cout << "Please print your command :\n";
-		std::cin.ignore();
 		std::getline(std::cin, choice);
 		if (choice == "add" || choice == "Add" || choice == "ADD")
 			phonebook.Add();
