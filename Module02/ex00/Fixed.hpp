@@ -12,11 +12,10 @@ class Fixed
 
 	public:
 
-	Fixed(void);
-	Fixed(const Fixed &n);
-	Fixed & operator = (const Fixed &n);
-	~Fixed(void);
-
+	Fixed();
+	~Fixed();
+	Fixed(const Fixed &p);
+	Fixed & operator = (const Fixed &p);
 	int	getRawBits(void) const;
 	void	setRawBits(int const raw)
 };
